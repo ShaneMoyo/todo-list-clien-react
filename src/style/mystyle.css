@@ -43,11 +43,7 @@ p {
   border-radius: 10px; }
 
 .hero.is-info {
-  background: linear-gradient(#1e6fab, rgba(41, 177, 206, 0.2), white), url("../assets/images/sunset-clouds.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+ }
 
 .hero .nav, .hero.is-success .nav {
   -webkit-box-shadow: none;
