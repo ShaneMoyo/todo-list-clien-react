@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Routes from './Routes';
+import Navigation from '../components/navigation/Navigation';
 import { checkForToken } from '../components/auth/actions';
 import { connect } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
@@ -24,7 +25,7 @@ class App extends Component {
               <link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
               <title>Todo List</title>
             </head>
-
+            <Navigation/>
             <Routes/>
 
           </div>

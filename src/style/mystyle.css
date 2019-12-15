@@ -31,9 +31,6 @@ p {
   -o-background-size: cover;
   background-size: cover; }
 
-.react-datetime-picker {
-  margin: 0px auto 0px auto; }
-
 .button.centered {
   display: table;
   margin: 0 auto; }
@@ -43,7 +40,11 @@ p {
   border-radius: 10px; }
 
 .hero.is-info {
- }
+  background: #1e6fab;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .hero .nav, .hero.is-success .nav {
   -webkit-box-shadow: none;
@@ -64,7 +65,7 @@ p {
 .navbar {
   border-style: solid;
   border-width: 0px 0px 1px 0px;
-  border-color: #efba61; }
+  border-color: #8ab6c6; }
 
 .navbar-menu {
   background-color: rgba(255, 255, 255, 0.1); }

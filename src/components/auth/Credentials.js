@@ -4,7 +4,7 @@ import React from 'react';
 
 export default ({ submit, action, allowName = false, loading, error }) => (
   <div class="is-warning ">
-    <div class="column is-waring is-4 is-offset-4">
+    <div class="column is-info is-4 is-offset-4">
       <div class="box animated fadeIn is-warning" >
         <form onSubmit={e => {
           e.preventDefault();
@@ -48,7 +48,7 @@ export default ({ submit, action, allowName = false, loading, error }) => (
             </div>
             <div class="field has-text-centered">
               <div class="control has-text-centered">
-              { error ? <div class="animated shake button is-danger is-small ">Authentication Failed</div> : null}
+              { error ? <div class="animated fadIn button is-warning is-small ">Authentication Failed</div> : null}
               </div>
             </div>
           <button class={loading ? "button is-loading is-large is-info" : "button is-outlined is-large is-info"}>{action}</button>

@@ -23,10 +23,10 @@ function Auth({ location }) {
   if(user) return <Redirect to={redirect}/>;
 
   return (
-    <section class="hero is-fullheight has-text-centered is-warning login">
+    <section class="hero is-fullheight has-text-centered is-info login">
         <Switch>
           <Route path="/auth/signin" component={() => (
-            <div class="is-warning has-text-white">
+            <div class="is-info has-text-white">
               <br/>
               <br/>
               <br/>
@@ -35,7 +35,7 @@ function Auth({ location }) {
             </div>
           )}/>
           <Route path="/auth/signup" render={() => (
-            <div class="is-warning has-text-white">
+            <div class="is-info has-text-white">
               <br/>
               <br/>
               <br/>
