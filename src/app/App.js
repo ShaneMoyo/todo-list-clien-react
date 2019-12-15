@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Routes from './Routes';
+import { HashRouter as Router } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function App() {
   return (
