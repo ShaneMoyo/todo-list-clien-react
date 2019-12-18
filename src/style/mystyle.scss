@@ -91,7 +91,7 @@ p {
 .navbar-menu{
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .react-datetime-picker__wrapper {
