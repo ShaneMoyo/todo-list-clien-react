@@ -6,10 +6,10 @@ export default function LandingMain() {
   return <section class="animated fadeIn hero is-info is-fullheight">
           <div class="hero-body">
             <div class="column is-6 is-offset-3 has-text-centered">
-              <NavBarLink exact to="todos/me" class="tile is-parent">
+              <NavBarLink exact to="/todos/new" class="tile is-parent">
                 <article class="tile is-child notification is-success landing">
                   <div class="content">
-                    <p class="title">Todos</p>
+                    <p class="title">Add New Todo +</p>
                   </div>
                 </article>
               </NavBarLink>
