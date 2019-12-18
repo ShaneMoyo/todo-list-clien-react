@@ -60,9 +60,8 @@ p {
   background: linear-gradient(
   rgba(30,111,171, 1),
   rgba(41,177,206, 0.2),
-
   rgba(255, 255, 255, 1)
-    ), url('../assets/images/low-clouds.jpg') no-repeat center center fixed;
+    );
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -85,13 +84,51 @@ p {
 }
 
 .navbar{
-  border-style: solid;
-  border-width: 0px 0px 1px 0px;
-  border-color: #efba61;
+  // border-style: solid;
+  // border-width: 0px 0px 1px 0px;
+  // border-color: #efba61;
 }
 .navbar-menu{
   background-color: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
+.react-datetime-picker__wrapper {
+  border: none !important;
+}
+.appointments {
+  display: block;
+}
+.appointment-list {
+  display: block;
+}
+.grow {
+  opacity: 0.8 !important;
+
+  transition: all .1s ease-in-out;
+}
+.grow:hover {
+  opacity: 1 !important;
+  transform: scale(1.01);
+}
+.grow.more {
+
+
+
+}
+.DayPicker {
+  display: block !important;
+
+}
+.notification.is-success.landing {
+  background-color: none !important;
+  background: transparent !important;
+  border: solid white !important;
+}
+
+.hr-white {
+  background-color: #ffffff;
+}
 
 @import "../../node_modules/bulma/bulma";
