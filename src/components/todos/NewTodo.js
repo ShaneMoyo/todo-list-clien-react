@@ -18,7 +18,7 @@ export default function NewTodo() {
     return dispatch(saveTodo({ title, description, date: moment(), status: 'todo'})).then(() => setTodoSaved(!todoSaved))
   }
 
-  if (todoSaved) { return <Redirect to='/me/todos'/> }
+  if (todoSaved) { return <Redirect to='/todos/me'/> }
 
   return (
         <div class="container has-text-centered">
