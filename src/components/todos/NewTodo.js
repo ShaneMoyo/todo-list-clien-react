@@ -6,14 +6,14 @@ import { saveTodo } from './actions';
 import { Redirect } from 'react-router-dom';
 
 
-export default function NewTodo() {
+export default function NewTodo(props) {
 
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [todoSaved, setTodoSaved] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(props);
 
-
+  console.log('todo props', )
   const handleSubmit = () => {
     return dispatch(saveTodo({ title, description, date: moment(), status: 'todo'})).then(() => setTodoSaved(!todoSaved))
   }
