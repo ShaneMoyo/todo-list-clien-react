@@ -4,6 +4,7 @@ import Navigation from '../components/navigation/Navigation';
 import { checkForToken } from '../components/auth/actions';
 import { connect } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 import '../style/mystyle.css';
 
 
@@ -16,6 +17,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <ScrollToTop>
           <div className="App">
             <head>
               <meta charSet="utf-8"/>
@@ -29,6 +31,7 @@ class App extends Component {
             <Routes/>
 
           </div>
+        </ScrollToTop>
       </Router>
     );
   }
