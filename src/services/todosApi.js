@@ -19,6 +19,6 @@ export default {
   },
 
   remove(id) {
-    return request.delete(`/todos/me/${id}`);
+    return request.delete(`/todos/${id}`);
   }
 };

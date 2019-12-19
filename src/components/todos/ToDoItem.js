@@ -4,13 +4,16 @@ import { mdiPencilOutline, mdiUnfoldMoreHorizontal, mdiUnfoldLessHorizontal } fr
 import Icon from '@mdi/react';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment'
+import { deleteTodo } from './actions';
 
 import Fade from 'react-reveal/Fade';
 
 const NavBarLink = props => <NavLink {...props} className="nav-link tile is-parent" activeClassName="active"/>;
 export default function ToDoItem (props){
   const [expanded, setExpanded] = useState(false);
-  const { title, description, date } = props.todo;
+  const { title, description, date, _id } = props.todo;
+  const dispatch = useDispatch(props);
+  const handleDeleteTodo = () => dispatch(deleteTodo(_id))
   console.log('todo item ',props)
   return <li >
           <Fade>
@@ -40,8 +43,8 @@ export default function ToDoItem (props){
                 <p class="animated fadeIn">{moment(date).format('M/DD h:mm a')}</p>
                 <br/>
                 <p class="buttons is-centered">
-                  <div class="button is-white is-outlined is-rounded">edit</div>
-                  <div class="button is-white is-outlined is-rounded">delete</div>
+                  <div class="button animated fadeIn is-white is-outlined is-rounded">edit</div>
+                  <div class="button animated fadeIn is-white is-outlined is-rounded">delete</div>
                 </p>
                 </div>
               }
