@@ -14,7 +14,7 @@ export default function ToDoItem (props){
   const { title, description, date, _id } = props.todo;
   const dispatch = useDispatch(props);
   const handleDeleteTodo = () => dispatch(deleteTodo(props.todo._id))
-  console.log('todo item ',props)
+  console.log('todo item 11111111',props)
   return <li >
           <Fade>
             <article class="tile is-child notification is-success landing">
@@ -43,7 +43,7 @@ export default function ToDoItem (props){
                 <p class="animated fadeIn">{moment(date).format('M/DD h:mm a')}</p>
                 <br/>
                 <p class="buttons is-centered">
-                  <div class="button animated fadeIn is-white is-outlined is-rounded">edit</div>
+                  <NavBarLink todo={props.todo} exact to={`/todos/edit/${props.todo._id}`} class="button animated fadeIn is-white is-outlined is-rounded">edit</NavBarLink>
                   <div class="button animated fadeIn is-white is-outlined is-rounded" onClick={handleDeleteTodo}>done</div>
                 </p>
                 </div>

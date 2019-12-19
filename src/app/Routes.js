@@ -18,6 +18,7 @@ export default () => (
     <Route path="/auth" render={() => <Auth/>}/>
     <PrivateRoute exact path="/todos/me" render={() => <Todos/>}/>;
     <PrivateRoute exact path="/todos/new" render={() => <NewTodo/>}/>;
+    <PrivateRoute exact path="/todos/edit/:id" render={() => <NewTodo/>}/>;
     <Redirect to="/"/>
   </Switch>
 );

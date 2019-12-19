@@ -22,6 +22,7 @@ export function loadMyTodos(){
 }
 
 export function updateTodo(update) {
+  console.log('updating: ', update)
   return dispatch => {
     dispatch({ type: actions.LOADING })
     return todosApi.update(update)

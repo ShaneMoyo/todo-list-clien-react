@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import moment from 'moment'
 import Select from 'react-select'
-import { saveTodo } from './actions';
-import { Redirect } from 'react-router-dom';
+import { saveTodo, loadMyTodos, updateTodo } from './actions';
+import { Redirect, useParams } from 'react-router-dom';
 
 
 export default function NewTodo(props) {
-
+  let { id } = useParams();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [todoSaved, setTodoSaved] = useState(false);
-  const dispatch = useDispatch(props);
+  const todos = useSelector(state => state.todos);
+  async function loadTodos() { await dispatch(loadMyTodos()) }
 
-  console.log('todo props', )
+  useEffect(() => { (todos.length === 0) && loadTodos() }, []);
+  const todo = todos.find(element => element._id === id );
+  const titlePlaceholder = todo ? todo.title : 'Title';
+  const descriptionPlaceholder = todo ? todo.description : 'Description';
+
+  const dispatch = useDispatch(props);
   const handleSubmit = () => {
-    return dispatch(saveTodo({ title, description, date: moment(), status: 'todo'})).then(() => setTodoSaved(!todoSaved))
+    const save = todo ? updateTodo : saveTodo;
+    const payload = { ...todo, title, description, date: moment(), status: 'todo'};
+    return dispatch(save(payload)).then(() => setTodoSaved(!todoSaved))
   }
 
   if (todoSaved) { return <Redirect to='/todos/me'/> }
@@ -31,13 +39,13 @@ export default function NewTodo(props) {
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-medium" placeholder="Title" name="title" onChange={({ target: { value }}) => setTitle(value)}/>
+                      <input class="input is-medium" placeholder={titlePlaceholder} name="title" onChange={({ target: { value }}) => setTitle(value)}/>
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <textarea class="textarea is-medium" placeholder="Description" name="description" onChange={({ target: { value }}) => setDescription(value)}/>
+                      <textarea class="textarea is-medium" placeholder={descriptionPlaceholder} name="description" onChange={({ target: { value }}) => setDescription(value)}/>
                     </div>
                   </div>
 
@@ -45,7 +53,7 @@ export default function NewTodo(props) {
 
                   <div class="field">
                     <label class="label"></label>
-                    <button class="button is-medium is-info" onClick={handleSubmit}>Add Todo</button>
+                    <button class="button is-medium is-info" onClick={handleSubmit}>Save Todo</button>
                   </div>
 
                 </div>
