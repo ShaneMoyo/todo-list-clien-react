@@ -37,7 +37,7 @@ export default function NewTodo(props) {
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-medium" placeholder="Description" name="description" onChange={({ target: { value }}) => setDescription(value)}/>
+                      <textarea class="textarea is-medium" placeholder="Description" name="description" onChange={({ target: { value }}) => setDescription(value)}/>
                     </div>
                   </div>
 

@@ -13,7 +13,7 @@ export default function ToDoItem (props){
   const [expanded, setExpanded] = useState(false);
   const { title, description, date, _id } = props.todo;
   const dispatch = useDispatch(props);
-  const handleDeleteTodo = () => dispatch(deleteTodo(_id))
+  const handleDeleteTodo = () => dispatch(deleteTodo(props.todo._id))
   console.log('todo item ',props)
   return <li >
           <Fade>
@@ -44,7 +44,7 @@ export default function ToDoItem (props){
                 <br/>
                 <p class="buttons is-centered">
                   <div class="button animated fadeIn is-white is-outlined is-rounded">edit</div>
-                  <div class="button animated fadeIn is-white is-outlined is-rounded">delete</div>
+                  <div class="button animated fadeIn is-white is-outlined is-rounded" onClick={handleDeleteTodo}>delete</div>
                 </p>
                 </div>
               }
