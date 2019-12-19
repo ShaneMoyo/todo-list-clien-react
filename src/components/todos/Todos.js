@@ -13,6 +13,7 @@ export default function LandingMain() {
   useEffect(() => { loadTodos() }, []);
   const todoItems = todos.map(todo => <ToDoItem todo={todo}/>)
   return <section class="animated fadeIn hero is-info is-fullheight">
+          <br/><br/>
           <div class="hero-body">
             <div class="column is-6 is-offset-3 has-text-centered">
 
