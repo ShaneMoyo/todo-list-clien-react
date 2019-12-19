@@ -44,7 +44,7 @@ export default function ToDoItem (props){
                 <br/>
                 <p class="buttons is-centered">
                   <div class="button animated fadeIn is-white is-outlined is-rounded">edit</div>
-                  <div class="button animated fadeIn is-white is-outlined is-rounded" onClick={handleDeleteTodo}>delete</div>
+                  <div class="button animated fadeIn is-white is-outlined is-rounded" onClick={handleDeleteTodo}>done</div>
                 </p>
                 </div>
               }
