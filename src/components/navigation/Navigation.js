@@ -54,6 +54,9 @@ class Navigation extends Component {
                 <div className="navbar-item">
                   <NavBarLink exact to="/todos/new"><span className="tag is-info">New Todo</span></NavBarLink>
                 </div>
+                {user && <div className="navbar-item is-transparent">
+                  <NavBarLink exact to="/todos/me" onClick={() => this.onClickNav()}><span  className="tag is-info">My Todos</span></NavBarLink>
+                </div> }
                 {!user ? <div className="navbar-item is-transparent">
                   <NavBarLink exact to="/auth/signin" onClick={() => this.onClickNav()}><span  className="tag is-info">Log in</span></NavBarLink>
                 </div> :
