@@ -12,12 +12,13 @@ export function loading (state = false, { type }) {
   }
 }
 
-export function error (state = null, { type, payload }) {
+export function error (state = {}, { type, payload }) {
   switch (type) {
     case actions.ERROR:
+      console.log('catching error in reducer', payload)
       return payload;
     case actions.LOADING:
-      return null;
+      return {};
     default:
       return state;
   }

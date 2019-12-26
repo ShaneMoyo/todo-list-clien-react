@@ -14,7 +14,7 @@ export default function ToDoItem (props){
   const { title, description, date, _id } = props.todo;
   const dispatch = useDispatch(props);
   const handleDeleteTodo = () => dispatch(deleteTodo(props.todo._id))
-  console.log('todo item 11111111',props)
+
   return <li >
           <Fade>
             <article class="tile is-child notification is-success landing">

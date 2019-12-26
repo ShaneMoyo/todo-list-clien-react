@@ -4,8 +4,8 @@ import todos from '../components/todos/reducer';
 import { error, loading } from '../services/reducer';
 
 export default combineReducers({
+  error,
   auth,
   loading,
-  todos,
-  error
+  todos
 });

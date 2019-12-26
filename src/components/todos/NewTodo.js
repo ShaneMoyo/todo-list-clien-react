@@ -12,6 +12,7 @@ export default function NewTodo(props) {
   const [description, setDescription] = useState();
   const [todoSaved, setTodoSaved] = useState(false);
   const todos = useSelector(state => state.todos);
+  const error = useSelector(state => state.error);
   async function loadTodos() { await dispatch(loadMyTodos()) }
 
   useEffect(() => { (todos.length === 0) && loadTodos() }, []);
@@ -26,7 +27,8 @@ export default function NewTodo(props) {
     return dispatch(save(payload)).then(() => setTodoSaved(!todoSaved))
   }
 
-  if (todoSaved) { return <Redirect to='/todos/me'/> }
+  if (todoSaved && !Object.keys(error).length) { return <Redirect to='/todos/me'/> }
+  console.log('error', error, todoSaved && !error)
 
   return (
         <div class="has-text-centered">
@@ -39,13 +41,15 @@ export default function NewTodo(props) {
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-medium" placeholder={titlePlaceholder} name="title" onChange={({ target: { value }}) => setTitle(value)}/>
+                      <input class={error.title ? 'input is-medium is-danger' : 'input is-medium'} placeholder={titlePlaceholder} name="title" onChange={({ target: { value }}) => setTitle(value)}/>
+                      {error.title && <p class="help is-danger">{error.title}</p>}
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <textarea class="textarea is-medium" placeholder={descriptionPlaceholder} name="description" onChange={({ target: { value }}) => setDescription(value)}/>
+                      <textarea class={error.description ? 'textarea is-medium is-danger' : 'textarea is-medium'} placeholder={descriptionPlaceholder} name="description" onChange={({ target: { value }}) => setDescription(value)}/>
+                      {error.description && <p class="help is-danger">{error.description}</p>}
                     </div>
                   </div>
 
