@@ -8,17 +8,18 @@ import { Redirect, useParams } from 'react-router-dom';
 
 export default function NewTodo(props) {
   let { id } = useParams();
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
-  const [todoSaved, setTodoSaved] = useState(false);
   const todos = useSelector(state => state.todos);
   const error = useSelector(state => state.error);
+  const loading = useSelector(state => state.loading);
   async function loadTodos() { await dispatch(loadMyTodos()) }
 
   useEffect(() => { (todos.length === 0) && loadTodos() }, []);
   const todo = todos.find(element => element._id === id );
   const titlePlaceholder = todo ? todo.title : 'Title';
   const descriptionPlaceholder = todo ? todo.description : 'Description';
+  const [title, setTitle] = useState(todo ? todo.title : '');
+  const [description, setDescription] = useState(todo ? todo.description : '');
+  const [todoSaved, setTodoSaved] = useState(false);
 
   const dispatch = useDispatch(props);
   const handleSubmit = () => {
@@ -28,7 +29,6 @@ export default function NewTodo(props) {
   }
 
   if (todoSaved && !Object.keys(error).length) { return <Redirect to='/todos/me'/> }
-  console.log('error', error, todoSaved && !error)
 
   return (
         <div class="has-text-centered">
@@ -57,7 +57,7 @@ export default function NewTodo(props) {
 
                   <div class="field">
                     <label class="label"></label>
-                    <button class="button is-medium is-info" onClick={handleSubmit}>Save Todo</button>
+                    <button class={loading ? "button is-medium is-info is-loading" : "button is-medium is-info"} onClick={handleSubmit}>Save Todo</button>
                   </div>
 
                 </div>
