@@ -29,7 +29,7 @@ export default function NewTodo(props) {
   if (todoSaved) { return <Redirect to='/todos/me'/> }
 
   return (
-        <div class="container has-text-centered">
+        <div class="has-text-centered">
           <br/><br/>
           <section class="hero is-info is-fullheight">
             <div class="column is-waring is-one-third is-offset-one-third">
