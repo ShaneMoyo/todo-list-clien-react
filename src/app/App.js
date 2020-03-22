@@ -24,7 +24,7 @@ class App extends Component {
               <meta name="viewport" content="width=device-width, initial-scale=1"/>
               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/>
               <link rel="stylesheet" href="https://cdnjs.com/libraries/kissui.scrollanim"/>
-              <link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+              <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
               <title>Todo List</title>
             </head>
             <Navigation/>
