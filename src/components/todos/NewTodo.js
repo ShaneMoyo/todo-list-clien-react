@@ -57,7 +57,7 @@ export default function NewTodo(props) {
 
                   <div className="field">
                     <label className="label"></label>
-                    <button className={loading ? "button is-medium is-info is-loading" : "button is-medium is-info"} onClick={handleSubmit}>Save Todo</button>
+                    <button className={loading ? "button is-medium is-info is-loading" : "button is-medium is-info"} onClick={handleSubmit}>Save To Do</button>
                   </div>
 
                 </div>

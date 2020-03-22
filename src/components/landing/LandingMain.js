@@ -9,7 +9,7 @@ export default function LandingMain() {
               <NavBarLink exact to="todos/me" className="tile is-parent">
                 <article className="tile is-child notification is-success landing">
                   <div className="content">
-                    <p className="title">Todos</p>
+                    <p className="title">To Dos</p>
                   </div>
                 </article>
               </NavBarLink>
