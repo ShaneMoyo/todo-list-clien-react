@@ -8,7 +8,7 @@ export default function Landing(){
   return(
     <body>
       <LandingMain/>
-      <div class="box is-white">
+      <div className="box is-white">
       </div>
     </body>
   );

@@ -31,33 +31,33 @@ export default function NewTodo(props) {
   if (todoSaved && !Object.keys(error).length) { return <Redirect to='/todos/me'/> }
 
   return (
-        <div class="has-text-centered">
+        <div className="has-text-centered">
           <br/><br/>
-          <section class="hero is-info is-fullheight">
-            <div class="column is-waring is-one-third is-offset-one-third">
+          <section className="hero is-info is-fullheight">
+            <div className="column is-waring is-one-third is-offset-one-third">
               <br/><br/><br/><br/><br/><br/>
-              <div class="box animated fadeIn is-info" >
+              <div className="box animated fadeIn is-info" >
                 <div>
 
-                  <div class="field">
-                    <div class="control">
-                      <input class={error.title ? 'input is-medium is-danger' : 'input is-medium'} placeholder={titlePlaceholder} name="title" onChange={({ target: { value }}) => setTitle(value)}/>
-                      {error.title && <p class="help is-danger">{error.title}</p>}
+                  <div className="field">
+                    <div className="control">
+                      <input className={error.title ? 'input is-medium is-danger' : 'input is-medium'} placeholder={titlePlaceholder} name="title" onChange={({ target: { value }}) => setTitle(value)}/>
+                      {error.title && <p className="help is-danger">{error.title}</p>}
                     </div>
                   </div>
 
-                  <div class="field">
-                    <div class="control">
-                      <textarea class={error.description ? 'textarea is-medium is-danger' : 'textarea is-medium'} placeholder={descriptionPlaceholder} name="description" onChange={({ target: { value }}) => setDescription(value)}/>
-                      {error.description && <p class="help is-danger">{error.description}</p>}
+                  <div className="field">
+                    <div className="control">
+                      <textarea className={error.description ? 'textarea is-medium is-danger' : 'textarea is-medium'} placeholder={descriptionPlaceholder} name="description" onChange={({ target: { value }}) => setDescription(value)}/>
+                      {error.description && <p className="help is-danger">{error.description}</p>}
                     </div>
                   </div>
 
                   <hr/>
 
-                  <div class="field">
-                    <label class="label"></label>
-                    <button class={loading ? "button is-medium is-info is-loading" : "button is-medium is-info"} onClick={handleSubmit}>Save Todo</button>
+                  <div className="field">
+                    <label className="label"></label>
+                    <button className={loading ? "button is-medium is-info is-loading" : "button is-medium is-info"} onClick={handleSubmit}>Save Todo</button>
                   </div>
 
                 </div>

@@ -23,23 +23,23 @@ function Auth({ location }) {
   if(user) return <Redirect to={redirect}/>;
 
   return (
-    <section class="hero is-fullheight has-text-centered is-info login">
+    <section className="hero is-fullheight has-text-centered is-info login">
         <Switch>
           <Route path="/auth/signin" component={() => (
-            <div class="is-info has-text-white">
+            <div className="is-info has-text-white">
               <br/>
               <br/>
               <br/>
-              <p>Not yet registered? <Link class="button is-outlined is-small is-light" to="/auth/signup">Sign Up</Link></p>
+              <p>Not yet registered? <Link className="button is-outlined is-small is-light" to="/auth/signup">Sign Up</Link></p>
               <Credentials action="Sign In" submit={handleSignIn} loading={loading} error={error}/>
             </div>
           )}/>
           <Route path="/auth/signup" render={() => (
-            <div class="is-info has-text-white">
+            <div className="is-info has-text-white">
               <br/>
               <br/>
               <br/>
-              <p>Already have an account? <Link class="button is-outlined is-small is-light" to="/auth/signin">Sign In</Link></p>
+              <p>Already have an account? <Link className="button is-outlined is-small is-light" to="/auth/signin">Sign In</Link></p>
               <Credentials action="Sign Up" submit={handleSignUp} allowName={true} loading={loading} error={error}/>
             </div>
           )}/>

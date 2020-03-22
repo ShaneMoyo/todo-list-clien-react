@@ -3,9 +3,9 @@ import React from 'react';
 
 
 export default ({ submit, action, allowName = false, loading, error }) => (
-  <div class="is-warning ">
-    <div class="column is-info is-4 is-offset-4">
-      <div class="box animated fadeIn is-warning" >
+  <div className="is-warning ">
+    <div className="column is-info is-4 is-offset-4">
+      <div className="box animated fadeIn is-warning" >
         <form onSubmit={e => {
           e.preventDefault();
           const { elements } = e.target;
@@ -22,36 +22,36 @@ export default ({ submit, action, allowName = false, loading, error }) => (
           };
           submit(data);
         }}>
-          <h4 class="title has-text-grey">{ allowName ? 'Create an Account' : 'Login' }</h4>
-          <p class="subtitle has-text-grey">Please login to proceed.</p>
+          <h4 className="title has-text-grey">{ allowName ? 'Create an Account' : 'Login' }</h4>
+          <p className="subtitle has-text-grey">Please login to proceed.</p>
           { allowName &&
-            <div class="field">
-              <div class="control">
-                <input class="input is-medium" placeholder="First Name" name="firstName"/>
+            <div className="field">
+              <div className="control">
+                <input className="input is-medium" placeholder="First Name" name="firstName"/>
               </div>
             </div>}
             { allowName &&
-            <div class="field">
-              <div class="control">
-                <input class="input is-medium" placeholder="Last Name" name="lastName"/>
+            <div className="field">
+              <div className="control">
+                <input className="input is-medium" placeholder="Last Name" name="lastName"/>
               </div>
             </div>}
-            <div class="field">
-              <div class="control">
-              <input class="input is-medium" placeholder="Email" name="email"/>
+            <div className="field">
+              <div className="control">
+              <input className="input is-medium" placeholder="Email" name="email"/>
               </div>
             </div>
-            <div class="field">
-              <div class="control">
-              <input class="input is-medium" placeholder="Password" name="password"/>
+            <div className="field">
+              <div className="control">
+              <input className="input is-medium" placeholder="Password" name="password"/>
               </div>
             </div>
-            <div class="field has-text-centered">
-              <div class="control has-text-centered">
-              { error ? <div class="animated fadIn button is-warning is-small ">Authentication Failed</div> : null}
+            <div className="field has-text-centered">
+              <div className="control has-text-centered">
+              { Object.keys(error).length ? <div className="animated fadIn button is-warning is-small ">Authentication Failed</div> : null}
               </div>
             </div>
-          <button class={loading ? "button is-loading is-large is-info" : "button is-outlined is-large is-info"}>{action}</button>
+          <button className={loading ? "button is-loading is-large is-info" : "button is-outlined is-large is-info"}>{action}</button>
 
         </form>
       </div>

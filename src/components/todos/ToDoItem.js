@@ -17,11 +17,11 @@ export default function ToDoItem (props){
 
   return <li >
           <Fade>
-            <article class="tile is-child notification is-success landing">
-              <div class="content">
-                <p class="title">{title}
-                  <div exact to="/todos/new" props={props.todo} class="icon has-text-info is-pulled-right ">
-                    <i class="fas fa-info-circle animated fadeIn" onClick={() => setExpanded(!expanded)}>
+            <article className="tile is-child notification is-success landing">
+              <div className="content">
+                <p className="title">{title}
+                  <div exact to="/todos/new" props={props.todo} className="icon has-text-info is-pulled-right ">
+                    <i className="fas fa-info-circle animated fadeIn" onClick={() => setExpanded(!expanded)}>
                       <Icon
                         className="animated fadeIn"
                         path={ expanded ? mdiUnfoldLessHorizontal : mdiUnfoldMoreHorizontal }
@@ -38,13 +38,13 @@ export default function ToDoItem (props){
               </div>
               {expanded &&
                 <div>
-                <p class="animated fadeIn">{description}</p>
+                <p className="animated fadeIn">{description}</p>
                 <br/>
-                <p class="animated fadeIn">{moment(date).format('M/DD h:mm a')}</p>
+                <p className="animated fadeIn">{moment(date).format('M/DD h:mm a')}</p>
                 <br/>
-                <p class="buttons is-centered">
-                  <NavBarLink todo={props.todo} exact to={`/todos/edit/${props.todo._id}`} class="button animated fadeIn is-white is-outlined is-rounded">edit</NavBarLink>
-                  <div class="button animated fadeIn is-white is-outlined is-rounded" onClick={handleDeleteTodo}>done</div>
+                <p className="buttons is-centered">
+                  <NavBarLink todo={props.todo} exact to={`/todos/edit/${props.todo._id}`} className="button animated fadeIn is-white is-outlined is-rounded">edit</NavBarLink>
+                  <div className="button animated fadeIn is-white is-outlined is-rounded" onClick={handleDeleteTodo}>done</div>
                 </p>
                 </div>
               }

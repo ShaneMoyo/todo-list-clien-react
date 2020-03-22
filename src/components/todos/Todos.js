@@ -12,16 +12,16 @@ export default function LandingMain() {
   async function loadTodos() { await dispatch(loadMyTodos()) }
   useEffect(() => { loadTodos() }, []);
   const todoItems = todos.map(todo => <ToDoItem todo={todo}/>)
-  return <section class="animated fadeIn hero is-info is-fullheight">
+  return <section className="animated fadeIn hero is-info is-fullheight">
           <br/><br/>
-          <div class="hero-body">
-            <div class="column is-6 is-offset-3 has-text-centered">
+          <div className="hero-body">
+            <div className="column is-6 is-offset-3 has-text-centered">
 
               <ul>{todoItems}</ul>
-              <NavBarLink exact to="/todos/new" class="tile is-parent">
-                <article class="tile is-child notification is-success landing">
-                  <div class="content">
-                    <p class="title">Add New Todo +</p>
+              <NavBarLink exact to="/todos/new" className="tile is-parent">
+                <article className="tile is-child notification is-success landing">
+                  <div className="content">
+                    <p className="title">Add New Todo +</p>
                   </div>
                 </article>
               </NavBarLink>
